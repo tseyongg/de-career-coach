@@ -9,6 +9,8 @@ import requests
 import json
 import csv
 from task1 import fetch_restaurant_data, save_to_csv
+from dotenv import load_dotenv
+import os
 
 
 def is_event_in_apr_2019(event):
@@ -57,7 +59,8 @@ def extract_april_2019_events(data):
 
 def main():
     '''Main function to run script'''
-    DATA_URL = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
+    load_dotenv()
+    DATA_URL = os.getenv("DATA_URL")
     OUTPUT_FILE = "restaurant_events.csv"
 
     # Define CSV field names

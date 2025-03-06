@@ -11,6 +11,8 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 from task1 import fetch_restaurant_data, save_to_csv
+from dotenv import load_dotenv
+import os
 
 url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
 response = requests.get(url)
@@ -156,7 +158,8 @@ def create_rating_histogram(ratings_df):
 
 def main():
     '''Main function to run script'''
-    DATA_URL = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
+    load_dotenv()
+    DATA_URL = os.getenv("DATA_URL")
 
     # Fetch and process restaurant ratings data
     data = fetch_restaurant_data(DATA_URL)

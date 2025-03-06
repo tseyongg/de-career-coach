@@ -9,7 +9,8 @@ import requests
 import json
 import pandas as pd
 import csv
-
+from dotenv import load_dotenv
+import os
 
 def fetch_restaurant_data(url):
     '''Fetches restaurant data from provided URL'''
@@ -66,8 +67,9 @@ def save_to_csv(data, filename, fieldnames):
 
 def main():
     '''Main function to run script'''
-    DATA_URL = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
-    COUNTRY_CODES_FILE = "Country-Code.xlsx"
+    load_dotenv()
+    DATA_URL = os.getenv("DATA_URL")
+    COUNTRY_CODES_FILE = os.getenv("Country-Code.xlsx")
     OUTPUT_FILE = "restaurant_details.csv"
 
     # Define CSV field names
