@@ -56,3 +56,59 @@ standardized_rating_stats = standardized_rating_groups['Aggregate Rating'].agg([
 standardized_rating_stats = standardized_rating_stats.sort_values(by='mean', ascending=False)
 print(standardized_rating_stats)
 
+# create new summary stats table with thresholds
+summary_stats = standardized_rating_stats.copy()
+
+# set the threshold range for each category
+thresholds = {}
+for category in summary_stats.index:
+    if category == 'Not rated':
+        thresholds[category] = 'N/A'
+    elif category == 'Poor':
+        # poor starts from 0 and ends at 0.1 below the min of Average
+        average_min = summary_stats.loc['Average', 'min']
+        thresholds[category] = f'0.0 - {average_min - 0.1}'
+    else:
+        # for other categories, use their min-max range
+        thresholds[category] = f'{summary_stats.loc[category, "min"]} - {summary_stats.loc[category, "max"]}'
+
+summary_stats['thresholds'] = pd.Series(thresholds)
+
+if 'Not rated' in summary_stats.index:
+    # convert columns to object type before assigning string values
+    for col in ['min', 'max', 'mean']:
+        summary_stats[col] = summary_stats[col].astype(object)
+    summary_stats.loc['Not rated', ['min', 'max', 'mean']] = 'N/A'
+
+print(summary_stats)
+
+
+main_categories = ['Excellent', 'Very Good', 'Good', 'Average', 'Poor']
+filtered_df = ratings_df[ratings_df['Standardized Rating'].isin(main_categories)]
+
+plt.figure(figsize=(12, 6))
+
+colors = {
+    'Excellent': 'green',
+    'Very Good': 'blue',
+    'Good': 'orange',
+    'Average': 'yellow',
+    'Poor': 'red'
+}
+
+bins = [0.0, 2.5, 3.5, 4.0, 4.5, 5.0]
+
+# plot histogram for each category
+for category in main_categories:
+    category_data = filtered_df[filtered_df['Standardized Rating'] == category]['Aggregate Rating']
+    plt.hist(category_data, bins=bins, alpha=0.7, label=category, color=colors[category], 
+             edgecolor='black')
+
+plt.title('Distribution of Restaurant Ratings by Category', fontsize=15)
+plt.xlabel('Aggregate Rating', fontsize=12)
+plt.ylabel('Number of Restaurants', fontsize=12)
+plt.legend(title='Rating Category')
+plt.grid(axis='y', alpha=0.3)
+plt.xticks([0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0])
+plt.savefig('restaurant_ratings_histogram.png')
+plt.show()
