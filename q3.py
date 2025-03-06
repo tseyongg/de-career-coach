@@ -28,3 +28,31 @@ rating_groups = ratings_df.groupby('Rating Text')
 rating_stats = rating_groups['Aggregate Rating'].agg(['min', 'max', 'mean', 'count'])
 rating_stats = rating_stats.sort_values(by='mean', ascending=False)
 print(rating_stats)
+
+rating_mapping = {
+    'Skvělé': 'Excellent',
+    'Terbaik': 'Excellent',
+    'Eccellente': 'Excellent',
+    'Excelente': 'Excellent',
+    'Excellent': 'Excellent',
+    'Muito Bom': 'Very Good',
+    'Muy Bueno': 'Very Good',
+    'Very Good': 'Very Good',
+    'Velmi dobré': 'Very Good',
+    'Bardzo dobrze': 'Very Good',
+    'Bueno': 'Good',
+    'Good': 'Good',
+    'Skvělá volba': 'Good',
+    'Average': 'Average',
+    'Poor': 'Poor',
+    'Not rated': 'Not rated'
+}
+
+ratings_df['Standardized Rating'] = ratings_df['Rating Text'].map(rating_mapping)
+
+standardized_rating_groups = ratings_df.groupby('Standardized Rating')
+
+standardized_rating_stats = standardized_rating_groups['Aggregate Rating'].agg(['min', 'max', 'mean', 'count'])
+standardized_rating_stats = standardized_rating_stats.sort_values(by='mean', ascending=False)
+print(standardized_rating_stats)
+
