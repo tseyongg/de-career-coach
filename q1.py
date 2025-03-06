@@ -1,7 +1,7 @@
 '''
 Restaurant Details Extraction Script
 
-This script fetches restaurant data from a JSON source, then matches country codes
+This script fetches restaurant data from the JSON source, then matches country codes
 to a reference Excel file, and finally saves restaurant details to a CSV file.
 '''
 
@@ -73,7 +73,7 @@ def main():
     # Define CSV field names
     fieldnames = [
         'Restaurant Id', 'Restaurant Name', 'Country', 'City', 
-                'User Rating Votes', 'User Aggregate Rating', 'Cuisines', 'Event Date'
+        'User Rating Votes', 'User Aggregate Rating', 'Cuisines', 'Event Date'
     ]
 
     # Fetch and process restaurant details data
