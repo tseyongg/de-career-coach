@@ -22,10 +22,15 @@ event_date = restaurant['zomato_events'][0]['event']['start_date']
 ```
 
 ### Task 2
-Similarly,for task 2, I have taken the field `Photo URL` to be the first image url, or else multiple image urls would have to be input. For example, `event_id`= `292840` which has multiple photos.
+Similarly, for task 2, I have taken the field `Photo URL` to be the first image url, or else multiple image urls would have to be input. For example, `event_id`= `292840` which has multiple photos.
+Furthermore, if there are no `Photo URL` at all, I pass "NA" instead.
 
 ```py
-photo_url = event['photos'][0]['photo']['url']
+def extract_event_photo_url(event):
+    """Extract photo URL from event if possible."""
+    if 'photos' in event and event['photos']:
+        return event['photos'][0]['photo']['url']
+    return "NA"
 ```
 
 ### Task 3
