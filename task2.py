@@ -8,7 +8,7 @@ that happened during April 2019, and finally saves restaurant details to a CSV f
 import requests
 import json
 import csv
-from q1 import fetch_restaurant_data, save_to_csv
+from task1 import fetch_restaurant_data, save_to_csv
 
 
 def is_event_in_apr_2019(event):

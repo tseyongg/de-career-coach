@@ -10,7 +10,7 @@ import requests
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-from q1 import fetch_restaurant_data, save_to_csv
+from task1 import fetch_restaurant_data, save_to_csv
 
 url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
 response = requests.get(url)
