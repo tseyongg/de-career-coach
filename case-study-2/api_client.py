@@ -15,7 +15,12 @@ def get_carpark_availability(url):
         # For handling different lot types
         total_lots = 0
         avail_lots = 0
-        lot_types = {}
+
+        # Check if carpark_num already exists in carpark_availability, to account for duplicates
+        if carpark_num in carpark_availability:
+            lot_types = carpark_availability[carpark_num]['lot_types']
+        else:
+            lot_types = {}
 
         for lot in carpark['carpark_info']:
             lot_type = lot['lot_type']
@@ -31,8 +36,8 @@ def get_carpark_availability(url):
             }
 
         carpark_availability[carpark_num] = {
-            'total_lots': total_lots,
-            'available_lots': avail_lots,
+            'total_lots': total_lots + (carpark_availability.get(carpark_num, {}).get('total_lots',0)), # Add 0 to total_lots if new carpark_num, else add to existing value
+            'available_lots': avail_lots + (carpark_availability.get(carpark_num, {}).get('available_lots',0)), # Add 0 to avail_lots if new carpark_num, else add to existing value
             'lot_types': lot_types,
             'update_time': update_time
         }
@@ -41,7 +46,7 @@ def get_carpark_availability(url):
     print(f"API returned {len(data['items'][0]['carpark_data'])} carparks")
     print(f"Processed {len(carpark_availability)} carparks")
 
-    # Find duplicates
+    # Find duplicates, here for testing first
     carpark_numbers = [cp['carpark_number'] for cp in data['items'][0]['carpark_data']]
     duplicates = set([x for x in carpark_numbers if carpark_numbers.count(x) > 1])
     print(f"Duplicate carpark numbers: {duplicates}")
