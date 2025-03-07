@@ -97,6 +97,6 @@ Final table for analysis, after changing `Not rated` values from "0" to "N/A", a
 
 After the above iterative analysis tables, a final histogram plot is generated on the standardized data, with each coloured bin corresponding to the respective category thresholds:
 
-![histogram-plot](restaurant_ratings_histogram.png)
+![histogram-plot](output_data/restaurant_ratings_histogram.png)
 
 Here, we see that most restaurants are rated **Very Good**, with more conservative numbers for **Excellent**. This is folloiwed by **Good**, then **Average** ratings. For **Poor** rated restaurants, only one restaurant, `res_id`: `18445965` takes the crown. 

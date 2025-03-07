@@ -65,12 +65,23 @@ def save_to_csv(data, filename, fieldnames):
         writer.writerows(data)
 
 
+def ensure_output_directory():
+    """Create output directory if it doesn't exist"""
+    # Get directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(script_dir, "output_data")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    return output_dir
+
+
 def main():
     '''Main function to run script'''
     load_dotenv()
     DATA_URL = os.getenv("DATA_URL")
     COUNTRY_CODES_FILE = os.getenv("Country-Code.xlsx")
-    OUTPUT_FILE = "restaurant_details.csv"
+    output_dir = ensure_output_directory()
+    OUTPUT_FILE = os.path.join(output_dir, "restaurant_details.csv")
 
     # Define CSV field names
     fieldnames = [

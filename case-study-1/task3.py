@@ -10,7 +10,7 @@ import requests
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
-from task1 import fetch_restaurant_data, save_to_csv
+from task1 import fetch_restaurant_data, save_to_csv, ensure_output_directory
 from dotenv import load_dotenv
 import os
 
@@ -152,7 +152,8 @@ def create_rating_histogram(ratings_df):
     plt.xticks([0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0])
 
 
-    plt.savefig('restaurant_ratings_histogram.png')
+    output_dir = ensure_output_directory()
+    plt.savefig(os.path.join(output_dir, 'restaurant_ratings_histogram.png'))
     plt.show()
 
 
