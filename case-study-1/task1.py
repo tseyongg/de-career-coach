@@ -18,9 +18,9 @@ def fetch_restaurant_data(url):
     return response.json()
 
 
-def load_country_codes(filename):
+def load_country_codes(url):
     '''Loads country codes from given Excel file, then creates mapping dictionary'''
-    country_codes_df = pd.read_excel("Country-Code.xlsx")
+    country_codes_df = pd.read_excel(url)
     return dict(zip(country_codes_df['Country Code'], country_codes_df['Country']))
 
 
@@ -78,8 +78,8 @@ def ensure_output_directory():
 def main():
     '''Main function to run script'''
     load_dotenv()
-    DATA_URL = os.getenv("DATA_URL")
-    COUNTRY_CODES_FILE = os.getenv("Country-Code.xlsx")
+    RESTAURANT_JSON_URL = os.getenv("RESTAURANT_JSON_URL")
+    COUNTRY_CODES_URL = os.getenv("COUNTRY_CODES_EXCEL_URL")
     output_dir = ensure_output_directory()
     OUTPUT_FILE = os.path.join(output_dir, "restaurant_details.csv")
 
@@ -90,8 +90,8 @@ def main():
     ]
 
     # Fetch and process restaurant details data
-    data = fetch_restaurant_data(DATA_URL)
-    country_codes = load_country_codes(COUNTRY_CODES_FILE)
+    data = fetch_restaurant_data(RESTAURANT_JSON_URL)
+    country_codes = load_country_codes(COUNTRY_CODES_URL)
     restaurant_details = extract_restaurant_details(data, country_codes)
 
     save_to_csv(restaurant_details, OUTPUT_FILE, fieldnames)

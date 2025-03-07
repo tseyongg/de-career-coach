@@ -160,10 +160,10 @@ def create_rating_histogram(ratings_df):
 def main():
     '''Main function to run script'''
     load_dotenv()
-    DATA_URL = os.getenv("DATA_URL")
+    RESTAURANT_JSON_URL = os.getenv("RESTAURANT_JSON_URL")
 
     # Fetch and process restaurant ratings data
-    data = fetch_restaurant_data(DATA_URL)
+    data = fetch_restaurant_data(RESTAURANT_JSON_URL)
     rating_data = extract_ratings_data(data)
 
     # Create DataFrame on ratings data

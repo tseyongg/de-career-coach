@@ -60,7 +60,7 @@ def extract_april_2019_events(data):
 def main():
     '''Main function to run script'''
     load_dotenv()
-    DATA_URL = os.getenv("DATA_URL")
+    RESTAURANT_JSON_URL = os.getenv("RESTAURANT_JSON_URL")
     output_dir = ensure_output_directory()
     OUTPUT_FILE = os.path.join(output_dir, "restaurant_events.csv")
 
@@ -71,7 +71,7 @@ def main():
     ]
 
     # Fetch and process restaurant events data
-    data = fetch_restaurant_data(DATA_URL)
+    data = fetch_restaurant_data(RESTAURANT_JSON_URL)
     april_events = extract_april_2019_events(data)
 
     save_to_csv(april_events, OUTPUT_FILE, fieldnames)
