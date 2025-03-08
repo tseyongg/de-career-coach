@@ -25,6 +25,7 @@ CSV_URL = os.getenv("CSV_URL")
 
 def display_menu():
     '''Display main menu'''
+    print("")
     print("Welcome to Carpark Finder!")
     print("1. Search by Carpark Number")
     print("2. Search by Address")
@@ -69,7 +70,8 @@ def main():
                 print(message)
 
         elif choice == "3":
-            print("Thank you for our HDP Carpark App!")
+            print("Thank you for using our HDB Carpark App!")
+            print("")
             sys.exit(0)
         
         else:

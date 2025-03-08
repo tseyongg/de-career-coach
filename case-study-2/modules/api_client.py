@@ -43,13 +43,13 @@ def get_carpark_availability(url):
         }
 
 
-    print(f"API returned {len(data['items'][0]['carpark_data'])} carparks")
-    print(f"Processed {len(carpark_availability)} carparks")
+    # print(f"API returned {len(data['items'][0]['carpark_data'])} carparks")
+    # print(f"Processed {len(carpark_availability)} carparks")
 
-    # Find duplicates, here for testing first
-    carpark_numbers = [cp['carpark_number'] for cp in data['items'][0]['carpark_data']]
-    duplicates = set([x for x in carpark_numbers if carpark_numbers.count(x) > 1])
-    print(f"Duplicate carpark numbers: {duplicates}")
+    # # Find duplicates, here for testing first
+    # carpark_numbers = [cp['carpark_number'] for cp in data['items'][0]['carpark_data']]
+    # duplicates = set([x for x in carpark_numbers if carpark_numbers.count(x) > 1])
+    # print(f"Duplicate carpark numbers: {duplicates}")
 
 
     return carpark_availability
