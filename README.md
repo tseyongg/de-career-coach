@@ -2,8 +2,6 @@
 
 ## Setup Instructions for Case Study 1
 
-> **Note**: Kindly refrain from using PowerShell 7 as there are some minor display output issues for the `Final Summary Statistics` table for Task 3 in Case Study 1
-
 Kindly follow the instructions here to run the code  locally on your laptop.
 
 First run the following in your terminal:

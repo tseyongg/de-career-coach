@@ -225,3 +225,12 @@ Loaded data for 2255 carparks
 ```
 
 This was more for my (developer) clarity to see data flow from both sides, but I decided to keep it.
+
+### Miscellaneous
+
+```py
+type_name = {'C': 'Car', 'H': 'Heavy Vehicle', 'M': 'Motorcycle', 'L': 'Long Term', 'S': 'Season', 'Y': 'Yellow'}.get(lot_type, 'Unknown')
+```
+
+I tried my utmost to find references on data.gov.sg to find the definitions for `lot_type`, that is to convert the singular characters in the API from say "C", "Y", etc. to  human understandable text, but alas I could find it nowhere on the internet. Therefore, the above is my assumption for the various `lot_type`. Just for now.
+
