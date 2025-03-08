@@ -6,7 +6,8 @@ Kindly follow the instructions here to run the code  locally on your laptop.
 First run the following in your terminal:
 
 ```shell
-git clone https://github.com/tseyongg/de-career-coach
+git clone https://github.com/tseyongg/de-career-coach.git
+cd de-career-coach
 ```
 
 Then, to run and generate the output required for Case Study 1 , run this next:
