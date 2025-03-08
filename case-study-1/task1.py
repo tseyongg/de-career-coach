@@ -11,6 +11,7 @@ import csv
 from dotenv import load_dotenv
 import os
 
+
 def fetch_restaurant_data(url):
     '''Fetches restaurant data from provided URL'''
     response = requests.get(url)

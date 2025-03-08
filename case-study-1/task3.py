@@ -12,6 +12,7 @@ from task1 import fetch_restaurant_data, save_to_csv, ensure_output_directory
 from dotenv import load_dotenv
 import os
 
+
 def extract_ratings_data(data):
     '''
     Extracts restaurant ratings from fetched JSON data.
