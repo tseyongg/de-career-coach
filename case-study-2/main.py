@@ -50,7 +50,7 @@ def main():
 
         if choice == "1":
            carpark_number = input("Enter carpark number: ")
-           is_valid, message = validate_carpark_number(carpark_number)
+           is_valid, message = validate_carpark_number(carpark_number, merged_carpark_data)
 
            if is_valid:
                results = search_by_carpark_number(merged_carpark_data, carpark_number)
@@ -76,5 +76,5 @@ def main():
             print("Invalid number, please enter 1,2 or 3")
 
 
-if __name__ =="__main()__":
+if __name__ =="__main__":
     main()
