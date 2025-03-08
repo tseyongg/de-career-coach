@@ -6,7 +6,6 @@ to a reference Excel file, and finally saves restaurant details to a CSV file.
 '''
 
 import requests
-import json
 import pandas as pd
 import csv
 from dotenv import load_dotenv

@@ -5,9 +5,6 @@ This script fetches restaurant data from the JSON source, then extracts events
 that happened during April 2019, and finally saves restaurant details to a CSV file.
 '''
 
-import requests
-import json
-import csv
 from task1 import fetch_restaurant_data, save_to_csv, ensure_output_directory
 from dotenv import load_dotenv
 import os

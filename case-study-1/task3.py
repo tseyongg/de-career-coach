@@ -6,17 +6,11 @@ then standardizes rating text across languages,
 then adds a threshold field for clarity, and finally creates visualizations.
 """
 
-import requests
-import json
 import pandas as pd
 import matplotlib.pyplot as plt
 from task1 import fetch_restaurant_data, save_to_csv, ensure_output_directory
 from dotenv import load_dotenv
 import os
-
-url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json"
-response = requests.get(url)
-data = response.json()
 
 def extract_ratings_data(data):
     '''
