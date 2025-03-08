@@ -1,21 +1,12 @@
 # Case Study 1
 
-## Setup Instructions
-Kindly follow the instructions here to run the code for Case Study 1 locally on your laptop.
-
-Simply run the following in your terminal:
-
-```
-
-```
-
-After running this line of code, you should see your directory populate with `restaurant_details.csv` and `restaurant_events.csv`. These pertain to the outputs for Task 1 and Task 2 respectively. Also, you should see an image file, `restaurant_ratings_histogram.png` populate in your directory. This pertains to our analysis for Task 3. You may simply navigate to the `.csv` and `.png` files to view them.
+After successful run, you should see your directory populate with folder called `output`. Inside are `restaurant_details.csv` and `restaurant_events.csv`. These pertain to the outputs for Task 1 and Task 2 respectively. Also, you should see an image file, `restaurant_ratings_histogram.png` populate in your directory. This pertains to our analysis for Task 3. You may simply navigate to the `.csv` and `.png` files to view them. These 3 tasks are independent of each other.
 
 ## Key Design Decisions
 
 ### Task 1
 
-For task 1, I have taken the field `Event_Date` to be the earliest event, or else multiple event dates would have to be input. For example, `res_id` = `18382360` which has multiple events.
+For task 1, I have taken the field `Event_Date` to be the earliest event, or else multiple event dates would have to be input (we have already grabbed all events in task 2). For example, `res_id` = `18382360` which has multiple events. 
 
 ```py
 event_date = restaurant['zomato_events'][0]['event']['start_date']
@@ -39,7 +30,7 @@ In the resulting `restaurant_events.csv` file, you should have generated 182 uni
 
 ### Task 3
 
-For task 3, 3 tables will be output in your terminal, `Original Rating Statistics`, `Standardized Rating Statistics`, and `Final Summary Statistics`.
+For task 3, 3 tables will be output in your terminal, `Original Rating Statistics`, `Standardized Rating Statistics`, and `Final Summary Statistics`. This showcases the iterative analytical process I took.
 
 `Original Rating Statistics`
 
