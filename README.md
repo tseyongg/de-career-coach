@@ -109,5 +109,5 @@ I would also make use of:
 
 - **AWS CodePipeline** to maneveure between separate dev/prod environments, making use of CI/CD
 
-During peak periods where traffic spikes may occur, my Lambda functions would be able to auto-scale to meet the increased demand, while DynamoDB when enabled into on-demand mode will allow for the increased surges by auto scaling as well, which is implenmented via pay per request pricing. Possibly, I could also set up Amazon Simple Queue Service to allow user requests to wait in queue until Lambda is able to process them. Otherwise, time outs or failures might result.
+During peak periods where traffic spikes may occur, my Lambda functions would be able to auto-scale to meet the increased demand, while DynamoDB when enabled into on-demand mode will allow for the increased surges by auto scaling as well, which is implenmented via pay per request pricing. Possibly, I could also set up Amazon Simple Queue Service to allow user requests to wait in queue until Lambda is able to process them. Otherwise, timeouts or failures might result.
 
