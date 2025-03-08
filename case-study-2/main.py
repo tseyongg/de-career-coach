@@ -45,6 +45,14 @@ def main():
     # Then, merge the above data
     merged_carpark_data = merge_carpark_data(carpark_static, carpark_availability)
 
+    both_count = len([c for c in carpark_static if c in carpark_availability])
+    static_only_count = len([c for c in carpark_static if c not in carpark_availability])
+    api_only_count = len([c for c in carpark_availability if c not in carpark_static])
+
+    # Inform user of common data, as well as data unique to each source
+    print(f"Carparks present in both sources: {both_count}")
+    print(f"Carparks present only in static data: {static_only_count}")
+    print(f"Carparks present only in availability api data: {api_only_count}")
     print(f"Loaded data for {len(merged_carpark_data)} carparks")
 
     while True:
