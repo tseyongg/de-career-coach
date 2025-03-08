@@ -26,7 +26,7 @@ from formatter import format_carpark_results
 with open("merged_carpark_data.json", "r", encoding="utf-8") as f:
     merged_carpark_data = json.load(f)
 
-test_carpark_number = "Y39"
+test_carpark_number = "TE2"
 carpark_result = search_by_carpark_number(merged_carpark_data, test_carpark_number)
 print(format_carpark_results(carpark_result))
 
