@@ -21,7 +21,7 @@ def search_by_address(merged_carpark_data, input_address):
 # test comment out if needed
 
 import json
-from formatter import format_carpark_results
+from utils.formatter import format_carpark_results
 
 with open("merged_carpark_data.json", "r", encoding="utf-8") as f:
     merged_carpark_data = json.load(f)
