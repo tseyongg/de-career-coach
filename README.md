@@ -30,7 +30,7 @@ When you are done, simply run:
 docker-compose down
 cd ..
 ```
-The following illustrates Case Study 1's architecture:
+## Case Study 1 Architecture
 
 ![case-study_1-architecture](/images/case_study_1_architecture.png)
 
