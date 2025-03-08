@@ -19,13 +19,3 @@ def load_carpark_data(url):
         carparks[carpark_number] = row.to_dict()
     
     return carparks
-
-
-# test comment out if not needed
-# import json
-
-# url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/HDBCarparkInformation.csv"
-# data = load_carpark_data(url)
-
-# with open("carpark_static.json", "w") as f:
-#     json.dump(data, f, indent=4)

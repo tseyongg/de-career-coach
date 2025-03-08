@@ -47,23 +47,4 @@ def get_carpark_availability(url):
             'update_time': update_time
         }
 
-
-    # print(f"API returned {len(data['items'][0]['carpark_data'])} carparks")
-    # print(f"Processed {len(carpark_availability)} carparks")
-
-    # # Find duplicates, here for testing first
-    # carpark_numbers = [cp['carpark_number'] for cp in data['items'][0]['carpark_data']]
-    # duplicates = set([x for x in carpark_numbers if carpark_numbers.count(x) > 1])
-    # print(f"Duplicate carpark numbers: {duplicates}")
-
-
     return carpark_availability
-
-# # test comment out if needed
-# import json
-# url = "https://api.data.gov.sg/v1/transport/carpark-availability"
-# data = get_carpark_availability(url)
-
-# # test comment out if needed
-# with open("carpark_availability.json", "w") as f:
-#     json.dump(data, f, indent=4)

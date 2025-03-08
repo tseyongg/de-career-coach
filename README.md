@@ -35,6 +35,8 @@ cd ..
 
 ![case-study-1-architecture](/images/case_study_1_architecture.png)
 
+***
+
 ## Setup Instructions for Case Study 2
 Kindly follow the instructions here to run the code  locally on your laptop.
 
@@ -65,4 +67,47 @@ cd ..
 ## Case Study 2 Architecture
 
 ![case-study-2-architecture](/images/case_study_2_architecture.png)
+
+
+***
+
+## Cloud Deployment
+
+### Case Study 1
+
+For Case Study 1, I would implement a Batch Data Processing Framework on AWS, with the following:
+
+- **AWS Lambda** functions to be triggered for processing restaurant and event data
+
+- **S3** for data storage, especially for static JSON or CSV file types
+
+- **DynamoDB** for the purpose of storing restaurant data for fast retrieval
+
+- **AWS Step Functions** to orchestrate the job in sequence
+
+- **Amazon CloudWatch** to gather logging errors and to monitor execution details
+
+### Case Study 2
+
+- **ElastiCache** to be able to cache frequent API responses and thus improve performance (mimic Redis)
+
+- **AWS Lambda** functions similarly to be used for handling user search, data merging and output results formatted properly
+
+- **DynamoDB** to store carpark availability and ensure frequent read and writes with low latency
+
+- **Amazon CloudWatch** for monitoring and logging
+
+- **Amazon API Gateway** to publish and maintain my APIs at scale
+
+## Further Cloud Implementations
+
+I would also make use of:
+
+- **Terraform** to provision my resources on AWS via IAC
+
+- **AWS IAM** to abide by principle of least priviledge
+
+- **AWS CodePipeline** to maneveure between separate dev/prod environments, making use of CI/CD
+
+
 
