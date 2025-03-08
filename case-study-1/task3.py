@@ -150,7 +150,6 @@ def create_rating_histogram(ratings_df):
 
     output_dir = ensure_output_directory()
     plt.savefig(os.path.join(output_dir, 'restaurant_ratings_histogram.png'))
-    plt.show()
 
 
 def main():
