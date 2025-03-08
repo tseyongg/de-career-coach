@@ -2,18 +2,28 @@ def merge_carpark_data(carpark_static, carpark_availability):
     '''Merge static carpark data from CSV and real-time carpark data from gov API'''
     merged_carpark_data = {}
 
-    for carpark_num, availability in carpark_availability.items():
-
-        # Reassign for clarity, and to check if the static CSV contains the carpark number
-        static_key = carpark_num
-
-        if static_key in carpark_static:
+    # First, include all data matching in both static and API data (like inner join)
+    for carpark_num, static_data in carpark_static.items():
+        if carpark_num in carpark_availability:
             merged_carpark_data[carpark_num] = {
-                **carpark_static[carpark_num],
-                'availability' : availability
+                **static_data,
+                'availability': carpark_availability[carpark_num]
             }
+        # Then, include all static carparks with NA availability if in static data only, not in API data (like left join)
         else:
-            # Input NA values into static data fields if carpark number not found in static CSV
+            merged_carpark_data[carpark_num] = {
+                **static_data,
+                'availability': {
+                    'total_lots': 'NA',
+                    'available_lots': 'NA',
+                    'lot_types': {},
+                    'update_time': 'NA'
+                }
+            }
+    
+    # Lastly, include carparks from API that are not present in static data (like right join)
+    for carpark_num, availability in carpark_availability.items():
+        if carpark_num not in merged_carpark_data:
             merged_carpark_data[carpark_num] = {
                 'car_park_no': carpark_num,
                 'address': 'NA',
