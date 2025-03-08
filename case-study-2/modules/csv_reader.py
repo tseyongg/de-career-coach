@@ -1,5 +1,4 @@
 import pandas as pd
-import json
 
 def load_carpark_data(url):
     '''Load static carpark data from given URL'''
@@ -14,6 +13,10 @@ def load_carpark_data(url):
         carparks[carpark_number] = row.to_dict()
     
     return carparks
+
+
+# test comment out if not needed
+# import json
 
 # url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/HDBCarparkInformation.csv"
 # data = load_carpark_data(url)

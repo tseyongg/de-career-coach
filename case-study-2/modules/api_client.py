@@ -1,5 +1,4 @@
 import requests
-import json
 
 def get_carpark_availability(url):
     '''Fetch real-time carpark availability data from the gov API'''
@@ -53,7 +52,9 @@ def get_carpark_availability(url):
 
 
     return carpark_availability
-    
+
+# # test comment out if needed
+# import json
 # url = "https://api.data.gov.sg/v1/transport/carpark-availability"
 # data = get_carpark_availability(url)
 

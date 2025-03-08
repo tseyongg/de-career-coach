@@ -1,5 +1,5 @@
 '''
-Restaurant Details Extraction Script
+Restaurant Events Extraction Script
 
 This script fetches restaurant data from the JSON source, then extracts events
 that happened during April 2019, and finally saves restaurant details to a CSV file.
