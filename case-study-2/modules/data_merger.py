@@ -1,3 +1,9 @@
+'''
+Data Merger Module
+
+This module merges static carpark data from the given CSV URL and real-time carpark data from SG gov API.
+'''
+
 def merge_carpark_data(carpark_static, carpark_availability):
     '''Merge static carpark data from CSV and real-time carpark data from gov API'''
     merged_carpark_data = {}

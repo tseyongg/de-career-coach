@@ -1,3 +1,9 @@
+'''
+User Search Module
+
+This module contains functions to search for carpark data by 1) carpark number or 2) address.
+'''
+
 def search_by_carpark_number(merged_carpark_data, carpark_number):
     '''Search for carpark by carpark number'''
     carpark_number = carpark_number.strip().upper()

@@ -1,3 +1,9 @@
+'''
+Data Formatter Util
+
+This utility formats carpark search results into human readable output.
+'''
+
 def format_carpark_results(results):
     """Format carpark search results into human readable form"""
     if not results:

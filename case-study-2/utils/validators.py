@@ -1,3 +1,9 @@
+'''
+Data validator Util
+
+This utility validates user input for carpark number or address.
+'''
+
 def validate_carpark_number(carpark_number, available_carparks):
     '''Validate input carpark number'''
     if not carpark_number:

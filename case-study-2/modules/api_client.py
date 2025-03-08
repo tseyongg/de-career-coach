@@ -1,3 +1,9 @@
+'''
+API Client Module
+
+This module contains a function to fetch real-time carpark availability data from SG gov API.
+'''
+
 import requests
 
 def get_carpark_availability(url):

@@ -1,3 +1,9 @@
+'''
+CSV Reader Module
+
+This module contains a function to load static carpark data from the given URL.
+'''
+
 import pandas as pd
 
 def load_carpark_data(url):
