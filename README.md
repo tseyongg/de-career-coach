@@ -28,7 +28,7 @@ Inside contains:
 
 These answer Task 1, 2 and 3 respectively. Also, analysis steps for Task 3 will be displayed on your terminal. More details and key design decisions can be found [here](/case-study-1/README.md)
 
-When you are done, simply run:
+When you are done, hit CTRL + C to terminate, then simply run:
 
 ```shell
 docker-compose down
