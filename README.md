@@ -12,7 +12,7 @@ cd de-career-coach
 
 Then, to run and generate the output required for Case Study 1 , run this next:
 ```shell
-cd case-study 1
+cd case-study-1
 docker-compose up
 ```
 When the container exits, you should see a folder populate in your root directory called `output`
@@ -43,7 +43,7 @@ Kindly follow the instructions here to run the code  locally on your laptop.
 Now, for Case Study 2, simply run the following in your terminal:
 
 ```shell
-cd case-study 2
+cd case-study-2
 docker-compose run --rm app
 ```
 
