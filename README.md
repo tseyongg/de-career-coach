@@ -30,6 +30,9 @@ When you are done, simply run:
 docker-compose down
 cd ..
 ```
+The following illustrates Case Study 1's architecture:
+
+![case-study_1-architecture](/images/case_study_1_architecture.png)
 
 ## Setup Instructions for Case Study 2
 Kindly follow the instructions here to run the code  locally on your laptop.
