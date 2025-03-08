@@ -92,4 +92,4 @@ After the above iterative analysis tables, a final histogram plot is generated o
 
 Here, we see that most restaurants are rated **Very Good**, with more conservative numbers for **Excellent**. This is folloiwed by **Good**, then **Average** ratings. For **Poor** rated restaurants, only one restaurant, `res_id`: `18445965` takes the crown. 
 
-> **Note**: You will not be able to see the .png file here because there is currently no output. On your local run it will populate in your `output` folder which will then populate this section here.
+> **Note**: You will not be able to see the .png file here because there is currently no output. On your local run it will populate in your `output` folder which will then populate this section here on your local machine.
