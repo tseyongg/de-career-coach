@@ -3,8 +3,6 @@ version: '3'
 services:
   app:
     build: .
-    stdin_open: true
-    tty: true
     environment:
       - API_URL=https://api.data.gov.sg/v1/transport/carpark-availability
       - CSV_URL=https://raw.githubusercontent.com/Papagoat/brain-assessment/main/HDBCarparkInformation.csv
