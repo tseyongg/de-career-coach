@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 from task1 import fetch_restaurant_data, save_to_csv, ensure_output_directory
 from dotenv import load_dotenv
 import os
+import time
 
 
 def extract_ratings_data(data):
@@ -179,6 +180,9 @@ def main():
 
     # Create histogram of ratings
     create_rating_histogram(ratings_df)
+
+    # Add delay so that all output can be displayed
+    time.sleep(5)
 
 
 if __name__ == "__main__":
