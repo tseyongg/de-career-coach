@@ -54,9 +54,9 @@ def get_carpark_availability(url):
 
     return carpark_availability
     
-url = "https://api.data.gov.sg/v1/transport/carpark-availability"
-data = get_carpark_availability(url)
+# url = "https://api.data.gov.sg/v1/transport/carpark-availability"
+# data = get_carpark_availability(url)
 
-# test comment out if needed
-with open("carpark_availability.json", "w") as f:
-    json.dump(data, f, indent=4)
+# # test comment out if needed
+# with open("carpark_availability.json", "w") as f:
+#     json.dump(data, f, indent=4)

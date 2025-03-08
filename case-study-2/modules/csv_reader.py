@@ -1,20 +1,22 @@
-import csv
+import pandas as pd
 import json
 
-def load_carpark_data(csv_filepath):
-    '''Load static carpark data from given csv'''
+def load_carpark_data(url):
+    '''Load static carpark data from given URL'''
+    # Read CSV from static URL into pandas DataFrame
+    df = pd.read_csv(url)
+    
+    # Create dictionary where car_park_no is the key
+    # Convert each pandas row to regular dictionary
     carparks = {}
-
-    with open(csv_filepath, 'r') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            carpark_number = row['car_park_no']
-            carparks[carpark_number] = row
+    for index, row in df.iterrows():
+        carpark_number = row['car_park_no']
+        carparks[carpark_number] = row.to_dict()
     
     return carparks
 
-data = load_carpark_data("HDBCarparkInformation.csv")
+# url = "https://raw.githubusercontent.com/Papagoat/brain-assessment/main/HDBCarparkInformation.csv"
+# data = load_carpark_data(url)
 
-# test comment out if needed
-with open("carpark_static.json", "w") as f:
-    json.dump(data, f, indent=4)
+# with open("carpark_static.json", "w") as f:
+#     json.dump(data, f, indent=4)

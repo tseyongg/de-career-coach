@@ -18,18 +18,18 @@ def search_by_address(merged_carpark_data, input_address):
             results.append(merged_carpark_details)
     return results
 
-# test comment out if needed
+# # test comment out if needed
 
-import json
-from utils.formatter import format_carpark_results
+# import json
+# from utils.formatter import format_carpark_results
 
-with open("merged_carpark_data.json", "r", encoding="utf-8") as f:
-    merged_carpark_data = json.load(f)
+# with open("merged_carpark_data.json", "r", encoding="utf-8") as f:
+#     merged_carpark_data = json.load(f)
 
-test_carpark_number = "TE2"
-carpark_result = search_by_carpark_number(merged_carpark_data, test_carpark_number)
-print(format_carpark_results(carpark_result))
+# test_carpark_number = "TE2"
+# carpark_result = search_by_carpark_number(merged_carpark_data, test_carpark_number)
+# print(format_carpark_results(carpark_result))
 
-test_address = "tampines central 7"
-address_results = search_by_address(merged_carpark_data, test_address)
-print(format_carpark_results(address_results))
+# test_address = "tampines central 7"
+# address_results = search_by_address(merged_carpark_data, test_address)
+# print(format_carpark_results(address_results))
