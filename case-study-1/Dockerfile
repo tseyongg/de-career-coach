@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["sh", "-c", "python task1.py && python task2.py && python task3.py"]
+CMD ["sh", "-c", "python task1.py && python task2.py && python task3.py && sleep 8""]

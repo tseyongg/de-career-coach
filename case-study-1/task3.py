@@ -181,9 +181,6 @@ def main():
     # Create histogram of ratings
     create_rating_histogram(ratings_df)
 
-    # Add delay so that all output can be displayed
-    time.sleep(5)
-
 
 if __name__ == "__main__":
     main()
