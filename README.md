@@ -32,7 +32,7 @@ cd ..
 ```
 ## Case Study 1 Architecture
 
-![case-study_1-architecture](/images/case_study_1_architecture.png)
+![case-study-1-architecture](/images/case_study_1_architecture.png)
 
 ## Setup Instructions for Case Study 2
 Kindly follow the instructions here to run the code  locally on your laptop.
@@ -59,4 +59,7 @@ docker-compose down
 cd ..
 ```
 
+## Case Study 2 Architecture
+
+![case-study-2-architecture](/images/case_study_2_architecture.png)
 

@@ -214,3 +214,14 @@ The output in this case will be less detailed, since multiple carparks are retur
 ```
 to encourage the user to make a decision based on the available parking lots above, narrow down to 1 option, and so be able to view more detialed information as in our first 2 cases.
 
+I have also added a small section on container start up, just to let the user know which carparks are present in both gov API endpoint and static csv, present only in static csv, or present only in gov API endpoint:
+
+```shell
+Loading carpark data...
+Carparks present in both sources: 1932
+Carparks present only in static data: 268
+Carparks present only in availability api data: 55
+Loaded data for 2255 carparks
+```
+
+This was more for my (developer) clarity to see data flow from both sides, but I decided to keep it.
