@@ -15,6 +15,6 @@ def load_carpark_data(csv_filepath):
 
 data = load_carpark_data("HDBCarparkInformation.csv")
 
-# test
+# test comment out if needed
 with open("carpark_static.json", "w") as f:
     json.dump(data, f, indent=4)

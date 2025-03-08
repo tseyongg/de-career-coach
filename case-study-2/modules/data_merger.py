@@ -32,8 +32,10 @@ def merge_carpark_data(carpark_static, carpark_availability):
     
     return merged_carpark_data
 
+
+# test comment out if needed
 import json
-# test
+
 with open("carpark_static.json", "r", encoding="utf-8") as f:
     carpark_static = json.load(f)
 
