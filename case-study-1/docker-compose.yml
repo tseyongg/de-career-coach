@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ../output:/app/output_data
+    environment:
+      - RESTAURANT_JSON_URL=https://raw.githubusercontent.com/Papagoat/brain-assessment/main/restaurant_data.json
+      - COUNTRY_CODES_EXCEL_URL=https://raw.githubusercontent.com/Papagoat/brain-assessment/main/Country-Code.xlsx
