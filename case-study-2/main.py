@@ -27,9 +27,10 @@ def display_menu():
     '''Display main menu'''
     print("")
     print("Welcome to Carpark Finder!")
-    print("1. Search by Carpark Number")
-    print("2. Search by Address")
-    print("3. Exit")
+    print("Enter 1 to Search by Carpark Number")
+    print("Enter 2 to Search by Address")
+    print("Enter 3 to Exit")
+    print("")
     return input("Please enter your choice(1-3): ")
 
 def main():
@@ -44,7 +45,7 @@ def main():
     # Then, merge the above data
     merged_carpark_data = merge_carpark_data(carpark_static, carpark_availability)
 
-    print(f"Loaded {len(merged_carpark_data)} carpark data")
+    print(f"Loaded data for {len(merged_carpark_data)} carparks")
 
     while True:
         choice = display_menu()

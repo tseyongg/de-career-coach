@@ -41,7 +41,7 @@ def format_carpark_results(results):
         for carpark in results:
             avail = carpark['availability']
             output.append(f"- {carpark['car_park_no']}: {carpark['address']}")
-            output.append(f"  Available: {avail['available_lots']}/{avail['total_lots']} | Last Updated At: {avail['update_time']}")
+            output.append(f"  Available Parking Lots: {avail['available_lots']}/{avail['total_lots']} | Last Updated At: {avail['update_time']}")
     
         output.append("\nFor more details, please specify an exact carpark number or address.")
 
