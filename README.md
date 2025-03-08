@@ -16,7 +16,7 @@ cd de-career-coach
 Then, to run and generate the output required for Case Study 1 , run this next:
 ```shell
 cd case-study-1
-docker-compose up
+docker compose up
 ```
 When the container exits, you should see a folder populate in your root directory called `output`
 
@@ -31,7 +31,7 @@ These answer Task 1, 2 and 3 respectively. Also, analysis steps for Task 3 will 
 When you are done, hit CTRL + C to terminate, then simply run:
 
 ```shell
-docker-compose down
+docker compose down
 cd ..
 ```
 ## Case Study 1 Architecture
@@ -47,7 +47,7 @@ Now, for Case Study 2, simply run the following in your terminal:
 
 ```shell
 cd case-study-2
-docker-compose run --rm app
+docker compose run --rm app
 ```
 
 And you will be able to interactively query the application from your terminal.
@@ -63,7 +63,7 @@ More details and key design decisions can be found [here](/case-study-2/README.m
 When you are done, simply hit 3, then run:
 
 ```shell
-docker-compose down
+docker compose down
 cd ..
 ```
 
