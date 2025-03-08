@@ -23,7 +23,7 @@ Inside contains:
 - `restaurant_events.csv`
 - `restaurant_ratings_histogram.png`
 
-These answer Task 1, 2 and 3 respectively. Also, analysis steps for Task 3 will be displayed on your terminal. More details, key design decisions can be found [here](/case-study-1/README.md)
+These answer Task 1, 2 and 3 respectively. Also, analysis steps for Task 3 will be displayed on your terminal. More details and key design decisions can be found [here](/case-study-1/README.md)
 
 When you are done, simply run:
 
@@ -52,6 +52,8 @@ You can enter:
 - 1 to search by Carpark Number
 - 2 to search by Address
 - 3 to end your session
+
+More details and key design decisions can be found [here](/case-study-2/README.md)
 
 When you are done, simply hit 3, then run:
 
